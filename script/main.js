@@ -4,9 +4,9 @@ window.addEventListener('load',async () => {
     var inputValue = '';
     var { value: datevalue } = await Swal.fire({
     title: "Ingresa el dia que todo comenzó como contaseña!",
-    input: "password",
+    input: "date",
     inputLabel: "Espero que aciertes jijiji",
-    inputPlaceholder: "******",
+   // inputPlaceholder: "******",
     inputValue,
     showCancelButton: true,
     inputValidator: (value) => {
@@ -15,8 +15,9 @@ window.addEventListener('load',async () => {
         }
     }
     });
-    if (datevalue.toString()== '031124') {
-        await Swal.fire(`Es correcta la fecha, nos conocimos un 3 de noviembre. Espero que difrustres tu pequeña sorpresa`);
+    console.log(datevalue.toString());
+    if (datevalue.toString()== '2023-11-03') {
+        await Swal.fire(`Es correcta la fecha. Espero que difrustres tu pequeña sorpresa`);
         await Swal.fire({
             title: '¿Quieres reproducir música de fondo?',
             icon: 'warning',
