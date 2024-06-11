@@ -1,5 +1,6 @@
 // trigger to play music in the background with sweetalert
 window.addEventListener('load',async () => {
+    document.querySelector('.song').pause();
     var vnext = false;
     var inputValue = '';
     var { value: datevalue } = await Swal.fire({
@@ -17,7 +18,7 @@ window.addEventListener('load',async () => {
     });
     console.log(datevalue.toString());
     if (datevalue.toString()== '2023-11-03') {
-        await Swal.fire(`Es correcta la fecha. Espero que difrustres tu pequeña sorpresa`);
+        await Swal.fire(`Es correcta la fecha amor. Difrustra tu pequeña sorpresa`);
         await Swal.fire({
             title: '¿Quieres reproducir música de fondo?',
             icon: 'warning',
@@ -39,7 +40,17 @@ window.addEventListener('load',async () => {
     }
     
 });
-
+function insertLineBreaks(text) {
+    return text.split("").map(char => {
+        if (char === "#") {
+            return `<br>`;
+        }else if (char === " ") {
+            return ` `;
+        } else {
+            return `<span>${char}</span>`;
+        }
+    }).join("");
+}
 
 // animation timeline
 const animationTimeline = () => {
@@ -47,14 +58,15 @@ const animationTimeline = () => {
     const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
     const hbd = document.getElementsByClassName("wish-hbd")[0];
 
-    textBoxChars.innerHTML = `<span>${textBoxChars.innerHTML
+    /*textBoxChars.innerHTML = `<span>${textBoxChars.innerHTML
         .split("")
         .join("</span><span>")}</span>`;
 
     hbd.innerHTML = `<span>${hbd.innerHTML
         .split("")
-        .join("</span><span>")}</span>`;
-
+        .join("</span><span>")}</span>`;*/
+    textBoxChars.innerHTML = insertLineBreaks(textBoxChars.innerHTML);
+    hbd.innerHTML = insertLineBreaks(hbd.innerHTML);
     const ideaTextTrans = {
         opacity: 0,
         y: -20,
@@ -246,7 +258,7 @@ const animationTimeline = () => {
         }, {
             scale: 1,
             rotationY: 0,
-            color: "#ff69b4",
+            color: "#DCD0FF",
             ease: Expo.easeOut,
         },
         0.1,

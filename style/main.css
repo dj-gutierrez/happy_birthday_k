@@ -52,7 +52,7 @@ body {
 
 .text-box p {
   margin: 0;
-  text-align: left;
+  text-align: justify;
 }
 
 .text-box span {
@@ -229,6 +229,19 @@ body {
 @media screen and (max-height: 1000px) {
   .six .hat {
     left: 40%;
+  }
+  .four {
+    left: 40%;
+    top: 20px !important; 
+  }
+  .wish-hbd{
+    width: 95%;
+  }
+  .four .text-box { 
+    font-size: smaller;
+  }
+  #wishText{
+    font-size: medium
   }
 }
 
