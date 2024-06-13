@@ -4,7 +4,7 @@ window.addEventListener('load',async () => {
     var vnext = false;
     var inputValue = '';
     var { value: datevalue } = await Swal.fire({
-    title: "Ingresa el dia que todo comenzó como contaseña!",
+    title: "Ingresa el día que todo comenzó como contaseña!",
     input: "date",
     inputLabel: "Espero que aciertes jijiji",
    // inputPlaceholder: "******",
